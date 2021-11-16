@@ -1,0 +1,56 @@
+<div class="m-3 d-flex justify-content-center">
+  <div>
+    <div class="input-group tanio mb-3">
+      <input
+        type="text"
+        [(ngModel)]="nameCharacter"
+        class="form-control"
+        placeholder="character name"
+        aria-label="Recipient's username"
+        aria-describedby="button-addon2"
+      />
+      <button
+        class="btn btn-dark fs-3 btn btn-outline-warning"
+        type="button"
+        (click)="search()"
+        id="button-addon2"
+      >
+        Search for
+      </button>
+    </div>
+  </div>
+</div>
+<section class="d-flex justify-content-evenly flex-wrap">
+  <ng-container *ngFor="let character of characters">
+    <div class="card border-warning m-1" style="width: 18rem">
+      <img
+        class="card-img-top"
+        [src]="character.image"
+        alt="imagen-{{ character.name }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">
+          {{ character.name }}
+        </h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item fw-bold">
+          <b>House:</b>
+          {{ character.house | uppercase }}
+        </li>
+        <li class="list-group-item fw-bold">
+          <b>Species:</b>
+          {{ character.species | uppercase }}
+        </li>
+        <li class="list-group-item fw-bold">
+          <b>Gender:</b>
+          {{ character.gender | uppercase }}
+        </li>
+        <li class="list-group-item fw-bold">
+          <b>Ancestry:</b>
+          {{ character.ancestry | uppercase }}
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</section>

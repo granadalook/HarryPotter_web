@@ -1,0 +1,57 @@
+
+<section class="d-flex justify-content-evenly">
+  <div class="card border-warning m-3" style="width: 18rem; height: 32rem">
+    <img
+      src="../../../../../assets/140ba0ae3b5260d3d66c6026c1a53290.jpg"
+      class="card-img-top"
+      alt="escudo Hufflepuff"
+    />
+    <div class="card-body">
+      <h5 class="card-title text-center">Helga Hufflepuff</h5>
+      <p class="card-text">
+        head of the house:<br />
+        <b> Pomona Sprout.</b>
+      </p>
+    </div>
+    <a
+      (click)="houseStudens()"
+      routerLink="hufflepuff"
+      class="btn btn-dark bg-dark card-footer"
+      >Students of this house</a
+    >
+  </div>
+</section>
+<section class="d-flex justify-content-evenly flex-wrap">
+  <ng-container *ngFor="let character of characters">
+    <div class="card border-warning m-1" style="width: 18rem">
+      <img
+        class="card-img-top"
+        [src]="character.image"
+        alt="imagen-{{ character.name }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title text-center">
+          {{ character.name }}
+        </h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item fw-bold">
+          <b>House:</b>
+          {{ character.house | uppercase }}
+        </li>
+        <li class="list-group-item fw-bold">
+          <b>Species:</b>
+          {{ character.species | uppercase }}
+        </li>
+        <li class="list-group-item fw-bold">
+          <b>Gender:</b>
+          {{ character.gender | uppercase }}
+        </li>
+        <li class="list-group-item fw-bold">
+          <b>Ancestry:</b>
+          {{ character.ancestry | uppercase }}
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</section>
