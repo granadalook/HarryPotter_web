@@ -3,8 +3,8 @@ This project is about a web application that helps us to visualize the schools a
 
 This web consumes brings the data using the Api:http://hp-api.herokuapp.com/api/characters
 
-Clone the repo
-git clone https://github.com/granadalook/HarryPotter_web 
+Clone repo
+git  https://github.com/granadalook/HarryPotter_web 
 cd intern-angular
 ```shell
 Install npm packages
@@ -12,7 +12,7 @@ Install the npm packages described in the package.json and verify that it works:
 ```
 ```shell
 npm install
-npm start
+ng s -o
 ```
 The npm start command builds (compiles TypeScript and copies assets) the application into dist/, watches for changes to the source files, and runs lite-server on port 4200 by default.
 
