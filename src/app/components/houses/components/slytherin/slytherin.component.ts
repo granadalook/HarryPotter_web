@@ -20,5 +20,4 @@ export class SlytherinComponent implements OnInit {
       this.characters = m;
     });
   }
-
 }

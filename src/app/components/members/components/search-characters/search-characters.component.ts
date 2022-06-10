@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from 'src/app/core/services/characters/characters.service';
 import { Character } from 'src/app/character.model';
+import { PruebaService } from 'src/app/core/services/prueba/prueba.service';
 
 @Component({
   selector: 'app-search-characters',
@@ -10,7 +11,10 @@ import { Character } from 'src/app/character.model';
 export class SearchCharactersComponent implements OnInit {
   nameCharacter = '';
   characters?: Array<Character>;
-  constructor(private charactersService: CharactersService) {}
+  constructor(
+    private charactersService: CharactersService,
+    private prueba: PruebaService
+  ) {}
 
   ngOnInit(): void {}
   allcharacters() {
@@ -26,6 +30,17 @@ export class SearchCharactersComponent implements OnInit {
           .toUpperCase()
           .trim()
           .includes(this.nameCharacter.toUpperCase().trim())
+      );
+    });
+  }
+
+  traer() {
+    this.prueba.login().subscribe((data) => {
+      console.log(
+        'atoridad' + data.authorities,
+        'userName=  ' + data.userName,
+        'token= ' + data.token,
+        'bearerd= ' + data.bearer
       );
     });
   }
